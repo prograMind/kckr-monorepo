@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int   @id  @default(autoincrement())
+  email         String   @unique
+  userName      String
+  proposals     Proposal[]
+  isVerified      Boolean @default(false)
+  isActive        Boolean @default(false)
+  avatar        String
+}
+
+model Proposal {
+  id            Int   @id  @default(autoincrement())
+  title         String
+  description   String
+  user          User   @relation(fields: [userId], references: [id])
+  userId        Int
+  duration      Int
+  initialProposalsInContracts  Contract[]  @relation("InitialProposals")
+  otherProposalsInContracts    Contract[]  @relation("OtherProposals")
+  proofs        Proof[]
+  isPublic      ProposalType @default(PUBLIC)
+}
+
+enum ProposalType {
+  PRIVATE
+  PUBLIC
+}
+
+model Contract {
+  id            Int   @id  @default(autoincrement())           
+  isActive      Boolean @default(false)
+  initialProposalId   Int
+  otherProposalId     Int
+  initialProposal Proposal @relation("InitialProposals", fields: [initialProposalId], references: [id])
+  otherProposal Proposal? @relation("OtherProposals", fields: [otherProposalId], references: [id])
+  startDate     DateTime
+  proofs        Proof[]
+  categories    Category[]
+}
+
+model Category {
+  id            Int   @id  @default(autoincrement())     
+  title         String
+  description   String?
+  contracts     Contract[]
+}
+
+model Proof {
+  id             Int   @id  @default(autoincrement())     
+  proposalId     Int
+  contractId     Int
+  proposal       Proposal  @relation(fields: [proposalId], references: [id])
+  contract       Contract  @relation(fields: [contractId], references: [id])
+  claims         Claim[]
+  payload        Json
+}
+
+model Claim {
+  id            Int   @id  @default(autoincrement())
+  proofId       Int
+  proof         Proof @relation(fields: [proofId], references: [id])
+  description   String
+}
