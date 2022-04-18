@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+}
+
+a {
+  background-color: darkgreen;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 2rem;
+}
+
+a:hover {
+  color: darkgreen;
+  background-color: white;
+}
+
+/*navbar component*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 2rem;
+  margin: 1rem 0.5rem 0 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.navbar a {
+  display: inline-block;
+  margin: auto;
+  padding: 0.5rem 3rem;
+  vertical-align: top;
+}
+
+.navbar img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*my profile with dropdown*/
+.user-button {
+  height: 2rem;
+  display: inline-block;
+  position: relative;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  left: -200%;
+  width: auto;
+  border: 1px solid black;
+  padding: 0 2rem 1rem 2rem;
+  z-index: 1;
+  background-color: white;
+}
+
+.user-dropdown button {
+  background-color: darkgreen;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 0.5rem 0.5rem;
+}
+
+.user-button:hover .user-dropdown, 
+.user-dropdown p,
+.user-dropdown button{
+  display: block;
+}
+
+.user-dropdown p:hover {
+  font-weight: bold;
+}
+
+.user-dropdown button:hover {
+  color: darkgreen;
+  background-color: white;
+}
+
+.navbar-buttons img {
+  padding: 0 0.5rem;
+}
+
+/*grid with proposals*/
+.grid {
+  margin: 0 auto;
+  width: 55%;
+  height: 110vh;
+  background-color: rgb(241, 241, 204);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.proposal-card {
+  background-color: rgb(223, 243, 186);
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: 2px 2px gray;
+}
+
+.proposal-card:hover {
+  box-shadow: 4px 4px gray;
+}
+
+.proposal-card a {
+  padding: 0.5rem 3rem;
+  margin: 1rem auto;
+}
+
+.proposal-card img {
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 25%;
+  max-height: 25%;
+}
+.proposal-card p {
+  margin: 0.5rem;
+  font-size: large;
+}
+
+/*login page component*/
+.login-box {
+  margin: 5rem auto;
+  background-color:beige;
+  max-width: 35%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5rem;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box form input {
+  margin: 0.2rem;
+}
+
+.login-box button {
+  background-color: darkgreen;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 0.5rem 4rem;;
+  margin: 1rem;
+}
+
+.login-box h2 {
+  margin: 1rem auto;
+}
+
+.login-box hr {
+  width: 80%;
+}
+
+.alter-login {
+  display: flex;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.alter-login img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 0.5rem;
+}
+
+/*landing page components*/
+.hero {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5rem;
+  max-height: 50vh;
+}
+
+.hero img {
+  height: 100%;
+}
+
+.hero a {
+  padding: 1rem 3rem;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.section-two {
+  background-color: beige;
+  width: 100%;
+  max-height: 30vh;
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 0;
+}
+
+.section-two div {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-two div img {
+  width: 5em;
+  height: 5em;
+}
