@@ -17,7 +17,7 @@ model User {
   proposals     Proposal[]
   isVerified      Boolean @default(false)
   isActive        Boolean @default(false)
-  avatar        String
+  avatar        String?
 }
 
 model Proposal {
