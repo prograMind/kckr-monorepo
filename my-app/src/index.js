@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import Landing from './components/landing.tsx';
 import Login from './components/login.tsx';
 import Grid from './components/grid.tsx';
+import NewProposal from './components/newProposal.tsx';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,6 +20,7 @@ root.render(
       <Route path="/" element={<Landing />} />
         <Route path="login" element={<Login />}/>
         <Route path="grid" element={<Grid />}/>
+          <Route path="grid/newProposal" element={<NewProposal />}/>
     </Routes>
   </BrowserRouter>
 );

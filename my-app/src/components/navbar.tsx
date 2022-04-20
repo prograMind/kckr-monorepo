@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from 'react-dom';
 import { Link } from "react-router-dom";
+import NewProposal from "./newProposal.tsx";
 
 export default function Navbar () {
   return (
@@ -11,7 +12,9 @@ export default function Navbar () {
         </Link>
       </div>
       <div className="navbar-buttons">
-        <a href="#">Create a proposal</a>
+        <Link to="newProposal">
+          Create a proposal
+        </Link>
         <img src={require("../imgs/message.png")}/>
         <img src={require("../imgs/bell.png")}/>
         <div className="user-button">
