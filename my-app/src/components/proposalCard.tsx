@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from 'react-dom';
 
-export default function ProposalCard (props) {
+export default function ProposalCard (props: any) {
   return (
     <div className="proposal-card">
       <img src={require("../imgs/user.png")}/>

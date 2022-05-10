@@ -1,9 +1,21 @@
 import React from "react";
 import { render } from 'react-dom';
 import { Link } from "react-router-dom";
-import NewProposal from "./newProposal.tsx";
+import NewProposal from "./newProposal";
+import { useAuthContext } from "../App"
+import { auth } from "../firebase"
+import { createUserWithEmailAndPassword, getAuth, signOut } from "firebase/auth";
+
+async function handleLogout() {
+  try {
+    signOut(auth)
+  } catch (e) {
+    console.log(e)
+  }
+}
 
 export default function Navbar () {
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -24,7 +36,7 @@ export default function Navbar () {
               <p>My profile</p>
               <p>My proposals</p>
               <p>Active contracts</p>
-              <button>Sign out</button>
+              <button onClick={() => handleLogout()}>Sign out</button>
             </div>
         </div>
       </div>
